@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "mypassword";
+$username = "帳號";
+$password = "密碼";
 $dbname = "pet";
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) 
@@ -9,12 +9,6 @@ if ($conn->connect_error)
       die("Connection failed: " . $conn->connect_error);
     }
 $conn -> set_charset("utf8");
-//$sql="SELECT * FROM tax_country";
-/*$sql="SELECT if(count(*) is null,'寄養','寄養') as  name,count(*) as value FROM `pet_manage` WHERE 經營業務項目 LIKE '%寄養%' and 移除時間 is null
-union all
-SELECT if(count(*) is null,'繁殖','繁殖') as  name,count(*) as value FROM `pet_manage` WHERE 經營業務項目 LIKE '%繁殖%' and 移除時間 is null
-union all
-SELECT if(count(*) is null,'買賣','買賣') as  name,count(*) as value FROM `pet_manage` WHERE 經營業務項目 LIKE '%買賣%' and 移除時間 is null";*/
 
 $sql="SELECT if(count(*) is null,'寄養','寄養') as  name,count(*) as value FROM `pet_manage2` WHERE 經營業務項目 LIKE '%寄養%' 
 union all

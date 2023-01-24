@@ -1,8 +1,8 @@
 <?php
 //連線資料庫
 $servername = "localhost";
-$username = "root";
-$password = "mypassword";
+$username = "帳號";
+$password = "密碼";
 $dbname = "pet";
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) 

@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "mypassword";
+$username = "帳號";
+$password = "密碼";
 $dbname = "pet";
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) 
@@ -13,25 +13,6 @@ $now = new DateTime();
 $time=$now->format('Y-m-d'); 
 //$sql="SELECT * FROM tax_country";
 $time="'".$time."'";
-//echo $time;
-/*$sql=
-"
-SELECT if(max(寵物照顧及訓練) is null,'寵物照顧及訓練','寵物照顧及訓練') as  name,sum(寵物照顧及訓練) as value FROM `tax4` where 日期 = $time
-union all
-SELECT if(max(寵物用品零售) is null,'寵物用品零售','寵物用品零售') as  name,sum(寵物用品零售) as value FROM `tax4` where 日期 = $time
-union all
-SELECT if(max(寵物零售) is null,'寵物零售','寵物零售') as  name,sum(寵物零售) as value FROM `tax4` where 日期 = $time
-union ALL
-SELECT if(max(寵物飼品零售) is null,'寵物飼品零售','寵物飼品零售') as  name,sum(寵物飼品零售) as value FROM `tax4` where 日期 = $time
-union all
-SELECT if(max(寵物用品批發) is null,'寵物用品批發','寵物用品批發') as  name,sum(寵物用品批發) as value FROM `tax4` where 日期 = $time
-union ALL
-SELECT if(max(寵物批發) is null,'寵物批發','寵物批發') as  name,sum(寵物批發) as value FROM `tax4` where 日期 = $time
-union all
-SELECT if(max(寵物服裝及其飾品配件批發) is null,'寵物服裝及其飾品配件批發','寵物服裝及其飾品配件批發') as  name,sum(寵物服裝及其飾品配件批發) as value FROM `tax4` where 日期 = $time
-union ALL
-SELECT if(max(寵物殯葬) is null,'寵物殯葬','寵物殯葬') as  name,sum(寵物殯葬) as value FROM `tax4` where 日期 = $time
-";*/
 
 
 $sql=

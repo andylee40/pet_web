@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "mypassword";
+$username = "帳號";
+$password = "密碼";
 $dbname = "pet";
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) 
@@ -9,8 +9,7 @@ if ($conn->connect_error)
       die("Connection failed: " . $conn->connect_error);
     }
 $conn -> set_charset("utf8");
-//$sql="SELECT * FROM tax_country";
-/*$sql="SELECT 縣市 as country,count(*) as value FROM tax_day WHERE 營業人名稱 in(SELECT DISTINCT 營業場所名稱 FROM pet_manage where 移除時間 is null) and 移除時間 is null group by 縣市";*/
+
 $sql="SELECT 縣市 as country,count(*) as value FROM tax_sep WHERE 營業人名稱 in(SELECT DISTINCT 營業場所名稱 FROM pet_manage2)  group by 縣市";
 $result = mysqli_query($conn, $sql);
 $conn->close();

@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "mypassword";
+$username = "帳號";
+$password = "密碼";
 $dbname = "pet";
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) 
@@ -9,12 +9,7 @@ if ($conn->connect_error)
       die("Connection failed: " . $conn->connect_error);
     }
 $conn -> set_charset("utf8");
-//$sql="SELECT * FROM tax_country";
-/*$sql="SELECT 
-sum(if(業者名稱 like '%公司%',1,0)) 公司,
-sum(if(業者名稱 like '%個人%',1,0)) 個人
-from pet_food2
-where 移除時間 is null ";*/
+
 $sql="SELECT 
 sum(if(業者名稱 like '%公司%',1,0)) 公司,
 sum(if(業者名稱 like '%個人%',1,0)) 個人

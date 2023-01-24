@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "mypassword";
+$username = "帳號";
+$password = "密碼";
 $dbname = "pet";
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) 
@@ -9,15 +9,7 @@ if ($conn->connect_error)
       die("Connection failed: " . $conn->connect_error);
     }
 $conn -> set_charset("utf8");
-//$sql="SELECT * FROM tax_country";
-/*$sql="SELECT 特定寵物種類,
-sum(if(經營業務項目 LIKE '%繁殖%',1,0)) 繁殖,
-sum(if(經營業務項目 LIKE '%買賣%',1,0)) 買賣,
-sum(if(經營業務項目 LIKE '%寄養%',1,0)) 寄養
-from pet_manage
-where 移除時間 is null and 特定寵物種類 !=".'""'." 
-GROUP BY 特定寵物種類
-order by 繁殖 desc";*/
+
 
 $sql="SELECT 特定寵物種類,
 sum(if(經營業務項目 LIKE '%繁殖%',1,0)) 繁殖,

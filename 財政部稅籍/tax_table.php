@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "mypassword";
+$username = "帳號";
+$password = "密碼";
 $dbname = "pet";
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) 
@@ -18,29 +18,7 @@ $lastmmonth=date('Y/m/01',strtotime("-1 month",time()));
 $year=date("y");
 $month=date("m");
 $lastmonth=intval(date("m"))-1;
-/*$sql="SELECT 名稱,
-sum(if(新增時間 is not null,1,0)) 增加,
-sum(if(移除時間 is not null,1,0)) 減少,
-sum(if(新增時間 is not null,1,0))-sum(if(移除時間 is not null,1,0)) 漲跌
-from tax_day
-where MONTH(新增時間)=$month or MONTH(移除時間)=$month
-GROUP BY 名稱";*/
-/*$sql="SELECT (case when 名稱 like '寵物批發' then '寵物批發'
-         	 when 名稱 like '寵物服裝及其飾品配件批發' then '服裝及其飾品配件批發'
-        	when 名稱 like '寵物殯葬' then '寵物殯葬'
-        	when 名稱 like '寵物照顧及訓練' then '照顧及訓練'
-        	when 名稱 like '寵物用品批發' then '用品批發'
-        	when 名稱 like '寵物用品零售' then '用品零售'
-        	when 名稱 like '寵物零售' then '寵物零售'
-        	when 名稱 like '寵物飼品零售' then '飼品零售'
-        end) 名稱,
-sum(if(新增時間 is not null and MONTH(新增時間)=$month,1,0)) 增加,
-sum(if(移除時間 is not null and MONTH(移除時間)=$month,1,0)) 減少,
-sum(if(新增時間 is not null and MONTH(新增時間)=$month,1,0))-sum(if(移除時間 is not null and MONTH(移除時間)=$month,1,0)) 漲跌,
-(sum(if(新增時間 is not null and MONTH(新增時間)=$month,1,0))-sum(if(新增時間 is not null and MONTH(新增時間)=$lastmonth,1,0)))/sum(if(新增時間 is not null and MONTH(新增時間)=$lastmonth,1,0))*100  增加百分比,
-(sum(if(移除時間 is not null and MONTH(移除時間)=$month,1,0))-sum(if(移除時間 is not null and MONTH(移除時間)=$lastmonth,1,0)))/sum(if(移除時間 is not null and MONTH(移除時間)=$lastmonth,1,0))*100  減少百分比
-from tax_day
-GROUP BY 名稱";*/
+
 $sql="SELECT (case when 類別 like '寵物批發' then '寵物批發'
          	 when 類別 like '寵物服裝及其飾品配件批發' then '服裝及其飾品配件批發'
         	when 類別 like '寵物殯葬' then '寵物殯葬'

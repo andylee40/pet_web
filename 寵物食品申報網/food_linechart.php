@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "mypassword";
+$username = "帳號";
+$password = "密碼";
 $dbname = "pet";
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) 
@@ -9,15 +9,7 @@ if ($conn->connect_error)
       die("Connection failed: " . $conn->connect_error);
     }
 $conn -> set_charset("utf8");
-//$sql="SELECT * FROM tax_country";
-/*$sql="SELECT 產品種類,
-sum(if(產品來源='分裝',1,0)) 分裝,
-sum(if(產品來源='輸入',1,0)) 輸入,
-sum(if(產品來源='製造、加工',1,0)) 製造、加工,
-sum(if(產品來源='委託代工廠製造',1,0)) 委託代工廠製造
-from pet_food2
-where 產品種類 !=".'""'." and 移除時間 is null 
-GROUP BY 產品種類";*/
+
 
 $sql="SELECT 產品種類,
 sum(if(產品來源='分裝',1,0)) 分裝,
