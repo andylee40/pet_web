@@ -105,7 +105,7 @@ def Clear():
 def Insert():
     newst='/var/www/html/hong_pet/寵物業管理系統/manage_day/manage_'+(datetime.now().strftime("%Y%m%d"))+'_1.csv'
     #連線資料庫
-    connection= pymysql.connect(user='root',password='mypassword',host='localhost',database='pet',local_infile=1)
+    connection= pymysql.connect(user='帳號',password='密碼',host='localhost',database='pet',local_infile=1)
     #清空資料庫
     cursor = connection.cursor()
     query1="TRUNCATE TABLE pet_manage"
@@ -132,8 +132,8 @@ def Insert():
 def Insert2():
     hostname="localhost"
     dbname="pet"
-    uname="root"
-    pwd="mypassword"
+    uname="帳號"
+    pwd="密碼"
     #Create SQLAlchemy engine to connect to MySQL Database
     engine = create_engine("mysql+pymysql://{user}:{pw}@{host}/{db}?charset=utf8".format(host=hostname, db=dbname, user=uname, pw=pwd))
     df_day=df.drop_duplicates(keep='first')

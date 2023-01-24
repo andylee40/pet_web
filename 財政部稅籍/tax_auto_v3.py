@@ -120,8 +120,8 @@ def Different():
 def Insert():
     hostname="localhost"
     dbname="pet"
-    uname="root"
-    pwd="mypassword"
+    uname="帳號"
+    pwd="密碼"
     #Create SQLAlchemy engine to connect to MySQL Database
     engine = create_engine("mysql+pymysql://{user}:{pw}@{host}/{db}?charset=utf8".format(host=hostname, db=dbname, user=uname, pw=pwd))
     

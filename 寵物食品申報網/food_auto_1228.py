@@ -168,8 +168,8 @@ def Clear(pet_food_different):
 
     hostname="localhost"
     dbname="pet"
-    uname="root"
-    pwd="mypassword"
+    uname="帳號"
+    pwd="密碼"
     #Create SQLAlchemy engine to connect to MySQL Database
     engine = create_engine("mysql+pymysql://{user}:{pw}@{host}/{db}?charset=utf8mb4".format(host=hostname, db=dbname, user=uname, pw=pwd))
     change.to_sql(pet_food_different, engine, index=False,if_exists='append')
@@ -177,7 +177,7 @@ def Clear(pet_food_different):
 def Insert2():
     newst='/var/www/html/hong_pet/寵物食品申報網/food_daily/petfood_'+(datetime.now().strftime("%Y%m%d"))+'.csv'
     #連線資料庫
-    connection= pymysql.connect(user='root',password='mypassword',host='localhost',database='pet',local_infile=1)
+    connection= pymysql.connect(user='帳號',password='密碼',host='localhost',database='pet',local_infile=1)
     #清空資料庫
     cursor = connection.cursor()
     query1="TRUNCATE TABLE pet_food3"
